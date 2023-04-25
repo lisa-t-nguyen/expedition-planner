@@ -29,7 +29,7 @@ title: "Design Update: "
 - [ ] Make sure that click targets are either `<a>` or `<button>` elements.
 - [ ] Make sure that all click targets show a `cursor: pointer` when hovered with the mouse.
 
-- **Clean Up**
+### 🧹 Clean Up
   - [ ] Remove all buttons and placeholders that don't do anything.
   - [ ] Remove all console logs.
   - [ ] Remove all commented out code.
