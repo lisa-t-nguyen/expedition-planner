@@ -1,3 +1,8 @@
+---
+name: Pull Request
+about: Use this template for creating a Pull Request.
+title: ""
+---
 # Pull Request Template
 
 ## 🗒️ Description
