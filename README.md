@@ -1,1 +1,1 @@
-# expeditionplanner
+# expedition-planner
