@@ -1,10 +1,12 @@
 import React from 'react'
 import './search.css'
 
-const searchComponent = () => {
+const SearchComponent = () => {
   return (
-    <div>searchComponent</div>
+    <div>
+      <h1>Search Component</h1>
+      </div>
   )
 }
 
-export default searchComponent
+export default SearchComponent
