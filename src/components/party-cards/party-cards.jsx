@@ -1,10 +1,10 @@
 import React from 'react'
 import './party-cards.css'
 
-const partyCards = () => {
+const PartyCards = () => {
   return (
     <div>partyCards</div>
   )
 }
 
-export default partyCards
+export default PartyCards

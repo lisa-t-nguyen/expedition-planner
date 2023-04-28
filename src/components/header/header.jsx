@@ -1,10 +1,15 @@
 import React from 'react'
 import './header.css'
+import DreamMSLogo from '../../assets/DreamMSLogo.png'
+import ExpeditionPlanner from '../../assets/ExpeditionPlanner.png'
 
-const header = () => {
+const Header = () => {
   return (
-    <div>header</div>
+    <div>
+        <img src={DreamMSLogo} alt='DreamMSLogo'/>
+        <img src={ExpeditionPlanner} alt='Expedition Planner'/>
+    </div>
   )
 }
 
-export default header
+export default Header
