@@ -1,7 +1,7 @@
 import React from 'react'
 import './search.css'
 
-const SearchComponent = () => {
+const Search = () => {
   return (
     <div className='search-component'>
       <input type='text' placeholder='Search for player...' className='search-input'></input>
@@ -10,4 +10,4 @@ const SearchComponent = () => {
   )
 }
 
-export default SearchComponent
+export default Search

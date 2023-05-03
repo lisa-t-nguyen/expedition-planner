@@ -1,14 +1,10 @@
 import React from 'react'
-import SearchComponent from './components/search/search-component'
-import Header from './components/header/header'
-import Footer from './components/footer/footer'
+import ExpeditionPlanner from './components/expedition-planner/expedition-planner'
 
 const App = () => {
     return (
         <>
-            <Header/>
-            <SearchComponent/>
-            <Footer/>
+            <ExpeditionPlanner/>
         </>
     )
 }
