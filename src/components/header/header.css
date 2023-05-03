@@ -2,13 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15rem;
+    justify-content: flex-end;
+
+    height: 35%;
 }
 
 .dream-logo {
-    width: 40vw;
+    width: 40%;
 }
 
 .expedition-planner-logo {
-    width: 45vw;
+    width: 45%;
 }
