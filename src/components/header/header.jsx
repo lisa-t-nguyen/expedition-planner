@@ -5,9 +5,9 @@ import ExpeditionPlanner from '../../assets/ExpeditionPlanner.png'
 
 const Header = () => {
   return (
-    <div>
-        <img src={DreamMSLogo} alt='DreamMSLogo'/>
-        <img src={ExpeditionPlanner} alt='Expedition Planner'/>
+    <div className='header-container'>
+        <img src={DreamMSLogo} alt='DreamMSLogo' className='dream-logo'/>
+        <img src={ExpeditionPlanner} alt='Expedition Planner' className='expedition-planner-logo'/>
     </div>
   )
 }
