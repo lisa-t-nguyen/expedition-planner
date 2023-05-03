@@ -1,0 +1,16 @@
+.search-component {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    column-gap: 10px;
+}
+
+.search-input {
+    width: 20vw;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.submit-button {
+    font-family: 'Poppins', sans-serif;
+}
