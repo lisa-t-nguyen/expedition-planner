@@ -3,7 +3,9 @@ import './footer.css'
 
 const Footer = () => {
   return (
-    <div>footer</div>
+    <div>
+      <p className='footer-text'>Website created and designed by Alsiel and Azuly</p>
+    </div>
   )
 }
 
