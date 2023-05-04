@@ -1,5 +1,16 @@
+.footer-container {
+    display: flex;
+    align-items: flex-end;
+    height: 3%;
+}
+
 .footer-text {
     font-family: 'Poppins', sans-serif;
     color: #9B6694;
     font-weight: 500;
+    margin: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

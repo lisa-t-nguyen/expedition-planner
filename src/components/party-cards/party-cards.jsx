@@ -3,7 +3,9 @@ import './party-cards.css'
 
 const PartyCards = () => {
   return (
-    <div>partyCards</div>
+    <div className="party-cards-container">
+      partyCards
+    </div>
   )
 }
 
