@@ -1,10 +1,10 @@
 import React from 'react'
-import SearchComponent from './components/search/search-component'
+import ExpeditionPlanner from './components/expedition-planner/expedition-planner'
 
 const App = () => {
     return (
         <>
-        <SearchComponent/>
+            <ExpeditionPlanner/>
         </>
     )
 }
