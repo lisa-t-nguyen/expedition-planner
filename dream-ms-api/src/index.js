@@ -1,26 +1,13 @@
 // importing the dependencies
 import fetch from "node-fetch";
-import express from "express";
-import bodyParser from "body-parser";
+import express from "express"
 import cors from "cors";
 import helmet from "helmet";
-import morgan from "morgan";
 import * as cheerio from 'cheerio';
 
-// defining the Express app
 const app = express();
-
-// adding Helmet to enhance your API's security
 app.use(helmet());
-
-// using bodyParser to parse JSON bodies into JS objects
-app.use(bodyParser.json());
-
-// enabling CORS for all requests
 app.use(cors());
-
-// adding morgan to log HTTP requests
-app.use(morgan('combined'));
 
 // defining an endpoint to call the DreamMS player stats API
 app.get('/playerData/:playerName', async (req, res) => {
