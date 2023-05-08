@@ -35,12 +35,12 @@ app.get('/playerData/:playerName', async (req, res) => {
         const playerNameElement = $('div.details > h3');
         const playerNameElementText = playerNameElement.text();
         if (playerNameElementText.length >= req.params.playerName.length){
-            playerData.Name = playerNameElementText.substring(playerNameElementText.length - req.params.playerName.length);
-            if (playerData.Name.toLowerCase() != req.params.playerName.toLowerCase()) {
-                playerData.Name = req.params.playerName;
+            playerData.name = playerNameElementText.substring(playerNameElementText.length - req.params.playerName.length);
+            if (playerData.name.toLowerCase() != req.params.playerName.toLowerCase()) {
+                playerData.name = req.params.playerName;
             }
         } else {
-            playerData.Name = req.params.playerName;
+            playerData.name = req.params.playerName;
         }
 
         const playerDataItems = $('div.card-body > ul.fa-ul > li');
@@ -52,13 +52,19 @@ app.get('/playerData/:playerName', async (req, res) => {
             const data = $(element).text().split(': ');
 
             if (data.length === 2) {
-                const dataName = data[0];
+                const dataKeySplit = data[0].split(' ');
+                let dataKey = dataKeySplit[0].toLowerCase();
+                for (let i = 1; i < dataKeySplit.length; i++) {
+                    dataKey += dataKeySplit[i];
+                }
+
                 const dataValue = data[1];
 
-                playerData[dataName] = dataValue;
+                playerData[dataKey] = dataValue;
             }
         });
         
+        console.log(playerData);
         res.send(playerData);
     }).catch((error) => {
         res.status(error.code).send(error.message);
