@@ -23,16 +23,28 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // defining an endpoint to call the DreamMS player stats API
-app.get('/:playerName', async (req, res) => {
+app.get('/playerData/:playerName', async (req, res) => {
     fetch(`https://dreamms.gg/index.php?stats=${req.params.playerName}`)
     .then((response) => {
         return response.text();
     }).then((html) => {
         const $ = cheerio.load(html);
-        const playerDataItems = $('div.card-body > ul.fa-ul > li');
 
         const playerData = {};
-        playerData.Name = req.params.playerName;
+
+        const playerNameElement = $('div.details > h3');
+        const playerNameElementText = playerNameElement.text();
+        if (playerNameElementText.length >= req.params.playerName.length){
+            playerData.Name = playerNameElementText.substring(playerNameElementText.length - req.params.playerName.length);
+        } else {
+            playerData.Name = req.params.playerName;
+        }
+
+        const playerDataItems = $('div.card-body > ul.fa-ul > li');
+        if (playerDataItems.length <= 0) {
+            throw GenerateHttpError(`Player Data for '${req.params.playerName}' could not be retrieved!`, 404);
+        }
+
         playerDataItems.each((index, element) => {
             const data = $(element).text().split(': ');
 
@@ -46,9 +58,15 @@ app.get('/:playerName', async (req, res) => {
         
         res.send(playerData);
     }).catch((error) => {
-        res.send(error);
+        res.status(error.code).send(error.message);
     });
 });
+
+function GenerateHttpError(message, code) {
+    const error = new Error(message);
+    error.code = code;
+    return error;
+}
 
 // starting the server
 app.listen(3001, () => {
