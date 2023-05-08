@@ -1,0 +1,21 @@
+{
+  "name": "dream-ms-api",
+  "version": "1.0.0",
+  "description": "TBD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "node-fetch": "^3.3.1",
+    "request": "^2.88.2"
+  },
+  "type": "module"
+}
