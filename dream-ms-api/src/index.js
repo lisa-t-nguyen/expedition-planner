@@ -64,7 +64,6 @@ app.get('/playerData/:playerName', async (req, res) => {
             }
         });
         
-        console.log(playerData);
         res.send(playerData);
     }).catch((error) => {
         res.status(error.code).send(error.message);
