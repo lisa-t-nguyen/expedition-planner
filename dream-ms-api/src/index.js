@@ -36,6 +36,9 @@ app.get('/playerData/:playerName', async (req, res) => {
         const playerNameElementText = playerNameElement.text();
         if (playerNameElementText.length >= req.params.playerName.length){
             playerData.Name = playerNameElementText.substring(playerNameElementText.length - req.params.playerName.length);
+            if (playerData.Name.toLowerCase() != req.params.playerName.toLowerCase()) {
+                playerData.Name = req.params.playerName;
+            }
         } else {
             playerData.Name = req.params.playerName;
         }
