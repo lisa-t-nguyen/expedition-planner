@@ -1,4 +1,8 @@
 .party-cards-container {
     display: flex;
-    height: 57%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3%;
+
+    height: 45%;
 }

@@ -1,10 +1,13 @@
 import React from 'react'
 import './party-cards.css'
+import PartyCard from '../party-card/party-card'
 
 const PartyCards = () => {
   return (
     <div className="party-cards-container">
-      partyCards
+      <PartyCard />
+      <PartyCard />
+      <PartyCard />
     </div>
   )
 }
