@@ -2,7 +2,7 @@
 
 ## Description
 
-An unofficial API for retrieving player data from `https://dreamms.gg` via web scraping.
+An unofficial API for retrieving player data from `https://dreamms.gg/` via web scraping.
 
 ## Getting Started
 
