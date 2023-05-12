@@ -9,8 +9,10 @@
     color: #9B6694;
     font-weight: 500;
     margin: 0;
+    margin-left: 10px;
 
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+

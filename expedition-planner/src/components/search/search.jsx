@@ -47,7 +47,7 @@ const Search = () => {
   };
 
   return (
-    <div className='search-component'>
+    <div className='search-container'>
       <input type='text'
              placeholder='Search for player...'
              className='search-input'
