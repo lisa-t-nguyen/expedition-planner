@@ -1,4 +1,17 @@
 .party-cards-container {
     display: flex;
-    height: 57%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3%;
+    
+    height: 45%;
+}
+
+/* =========================== MEDIA QUERIES ============================  */
+
+@media screen and ( max-width: 600px ) {
+    .party-cards-container {
+        height: 140%;
+        margin-top: 20px;
+    }
 }
