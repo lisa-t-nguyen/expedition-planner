@@ -16,7 +16,61 @@ const PartyCard = ({partyNumber}) => {
            >
       </img>
       <div className="party-card">
-
+          <table className="party-table">
+            <thead>
+              <tr className="player-data-row">
+                <th>Name</th>
+                <th>Class</th>
+                <th>Level</th>
+                <th>Role</th>
+                <th>DPM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="player-data-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr className="player-data-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr className="player-data-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr className="player-data-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr className="player-data-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr className="player-data-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
       </div>
     </div>
   )

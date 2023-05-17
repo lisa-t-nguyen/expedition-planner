@@ -17,6 +17,23 @@
 
     width: 100%;
     height: 100%;
+
+    overflow: hidden;
+}
+
+.party-table {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color:#9B6694;
+    text-align: center;
+}
+
+.player-data-row {
+    height: 14%;
 }
 
 /* =========================== MEDIA QUERIES ============================  */
