@@ -2,6 +2,6 @@
 
 body {
     background-image: url(../src/assets/PurpleBG.png);
-    background-repeat: no-repeat;
+    background-size: auto;
     margin: 0;
 }
