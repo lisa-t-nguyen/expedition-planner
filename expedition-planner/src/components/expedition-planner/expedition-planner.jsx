@@ -13,12 +13,29 @@ const ExpeditionPlanner = () => {
     console.log(`Adding ${player.name} to party...`);
     for (const party of parties) {
       if (party.partyMembers.length < 6) {
-        party.partyMembers.push({name: player.name, class: player.job, level: player.level, dpm: player.singleTargetDPM});
+        party.partyMembers.push(player);
         addedPlayers.set(player.name.toLowerCase(), player);
         console.log(`Added ${player.name.toLowerCase()} to map`)
+        console.log(addedPlayers);
+        console.log(parties);
         setParties([...parties]);
         return;
       }
+    }
+  }
+
+  const updatePlayer = (player) => {
+    console.log(`Updating ${player.name} in party...`);
+    if (addedPlayers.has(player.name.toLowerCase())) {
+      const playerToUpdate = addedPlayers.get(player.name.toLowerCase());
+      playerToUpdate.name = player.name;
+      playerToUpdate.class = player.job;
+      playerToUpdate.level = player.level;
+      playerToUpdate.dpm = player.singleTargetDPM;
+      setParties([...parties]);
+      console.log(`Updated ${player.name.toLowerCase()} in map`)
+      console.log(addedPlayers);
+      console.log(parties);
     }
   }
 
@@ -48,7 +65,7 @@ const ExpeditionPlanner = () => {
   return (
     <div className="expedition-planner-container">
         <Header/>
-        <Search addPlayer={addPlayer} addedPlayers={addedPlayers}/>
+        <Search addPlayer={addPlayer} updatePlayer={updatePlayer} addedPlayers={addedPlayers}/>
         <PartyCards parties={parties}/>
         <Footer/>
     </div>

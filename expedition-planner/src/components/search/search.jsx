@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import './search.css'
 
-const Search = ({ addPlayer, addedPlayers }) => {
+const Search = ({ addPlayer, updatePlayer, addedPlayers }) => {
   const [searchInput, setSearchInput] = useState('');
 
   const handleSearch = () => {
@@ -24,7 +24,8 @@ const Search = ({ addPlayer, addedPlayers }) => {
 
     console.log(`Calling http://localhost:3001/playerData/${playerName}`);
 
-    let player = {};
+    let player = { name: playerName };
+    addPlayer(player);
 
     fetch(`http://localhost:3001/playerData/${playerName}`)
     .then((response) => { 
@@ -39,7 +40,7 @@ const Search = ({ addPlayer, addedPlayers }) => {
     .then((playerObject) => {
       player = playerObject;
       console.log(player);
-      addPlayer(player);
+      updatePlayer(player);
     })
     .catch((error) => {
       console.log(error.message);
