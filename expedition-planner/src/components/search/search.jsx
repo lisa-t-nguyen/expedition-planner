@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import './search.css'
 
-const Search = () => {
+const Search = ({ addPlayer, addedPlayers }) => {
   const [searchInput, setSearchInput] = useState('');
 
   const handleSearch = () => {
@@ -15,6 +15,13 @@ const Search = () => {
   }
 
   const searchPlayer = (playerName) => {
+    console.log(`Checking if ${playerName.toLowerCase()} is in the map...`)
+    console.log(addedPlayers);
+    if (addedPlayers.has(playerName.toLowerCase())) {
+      console.log(`${playerName} has already been added!`)
+      return;
+    }
+
     console.log(`Calling http://localhost:3001/playerData/${playerName}`);
 
     let player = {};
@@ -32,6 +39,7 @@ const Search = () => {
     .then((playerObject) => {
       player = playerObject;
       console.log(player);
+      addPlayer(player);
     })
     .catch((error) => {
       console.log(error.message);
