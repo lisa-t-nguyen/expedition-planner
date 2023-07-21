@@ -6,7 +6,7 @@ import Party2 from '../../assets/Party2.png';
 import Party3 from '../../assets/Party3.png';
 
 import Player from '../player/player';
-import { MaxPartySizeContext } from '../../contexts/PartyContext';
+import { MaxPartySizeContext } from '../../contexts/party-context';
 
 const PartyCard = ({party}) => {
   const maxPartySizeContext = useContext(MaxPartySizeContext);

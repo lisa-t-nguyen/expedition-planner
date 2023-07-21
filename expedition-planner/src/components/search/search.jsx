@@ -1,9 +1,13 @@
-import React from 'react'
+import { React, useContext } from 'react'
 import { useState } from 'react';
 import './search.css'
 
-const Search = ({ addPlayer, updatePlayer, addedPlayers }) => {
+import { AddedPlayersContext } from '../../contexts/party-context'
+
+const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
   const [searchInput, setSearchInput] = useState('');
+
+  const addedPlayers = useContext(AddedPlayersContext);
 
   const handleSearch = () => {
     if (searchInput.length < 4 || searchInput.length > 12) {
@@ -44,6 +48,7 @@ const Search = ({ addPlayer, updatePlayer, addedPlayers }) => {
     })
     .catch((error) => {
       console.log(error.message);
+      removePlayer(player);
     })
   }
 
