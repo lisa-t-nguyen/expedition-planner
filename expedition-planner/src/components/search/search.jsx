@@ -36,6 +36,7 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
       if (response.status === 200) {
         return response.json();
       } else if (response.status === 404) {
+        removePlayer(player);
         throw new Error(`Player ${playerName} was not found!`);
       } else {
         throw new Error(`Search for player ${playerName} was not successful!`);
@@ -48,7 +49,6 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
     })
     .catch((error) => {
       console.log(error.message);
-      removePlayer(player);
     })
   }
 
