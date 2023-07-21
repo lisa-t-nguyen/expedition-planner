@@ -44,6 +44,12 @@
 
 /* =========================== MEDIA QUERIES ============================  */
 
+@media screen and ( max-width: 1200px ) {
+    .player-data-dpm {
+        display: none;
+    }
+}
+
 @media screen and ( max-width: 1024px ) {
     .party-container {
         width: 45%;

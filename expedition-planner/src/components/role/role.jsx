@@ -19,13 +19,15 @@ const Role = ({ playerClass, playerLevel }) => {
 
     // If the player's class is found in the role map, return the role
     for (const role of rolesContextMap.keys()) {
-      console.log(role)
       if (rolesContextMap.get(role).has(playerClass)) {
+        console.log(role)
+        
         return role;
       }
     }
 
     // Otherwise return "DPS"
+    console.log("DPS")
     return "DPS";
   }
 

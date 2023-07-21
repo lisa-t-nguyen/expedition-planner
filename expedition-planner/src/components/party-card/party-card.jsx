@@ -44,7 +44,7 @@ const PartyCard = ({party}) => {
                 <th>Class</th>
                 <th>Level</th>
                 <th>Role</th>
-                <th>DPM</th>
+                <th class="player-data-dpm">DPM</th>
               </tr>
             </thead>
             <tbody>

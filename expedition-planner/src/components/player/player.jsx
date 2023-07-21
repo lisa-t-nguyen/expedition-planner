@@ -11,7 +11,7 @@ const Player = (player) => {
         <td>{player.class}</td>
         <td>{player.level}</td>
         <td><Role playerClass={player.class} playerLevel={player.level} /></td>
-        <td>{player.dpm}</td>
+        <td class="player-dpm">{player.dpm}</td>
       </tr>
     </>
   )

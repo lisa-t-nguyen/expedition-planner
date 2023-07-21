@@ -1,2 +1,12 @@
 
 /* =========================== MEDIA QUERIES ============================  */
+
+@media screen and ( max-width: 1200px ) {
+    .player-dpm {
+        display: none;
+    }
+}
+
+@media screen and ( max-width: 600px ) {
+    
+}
