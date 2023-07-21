@@ -31,6 +31,9 @@ const ExpeditionPlanner = () => {
         return;
       }
     }
+
+    // Every party is full
+    console.log(`All parties are full!`);
   }
 
   const updatePlayer = (player) => {

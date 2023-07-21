@@ -1,6 +1,8 @@
 import React from 'react'
 import './player.css'
 
+import Role from '../role/role'
+
 const Player = (player) => {
   return (
     <>
@@ -8,7 +10,7 @@ const Player = (player) => {
         <td>{player.name}</td>
         <td>{player.class}</td>
         <td>{player.level}</td>
-        <td>{player.role}</td>
+        <td><Role playerClass={player.class} playerLevel={player.level} /></td>
         <td>{player.dpm}</td>
       </tr>
     </>
