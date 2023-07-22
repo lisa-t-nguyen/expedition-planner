@@ -1,0 +1,16 @@
+.hover-options-container {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #9B6694;
+    opacity: 0;
+}
+
+.hover-options-container:hover {
+    opacity: 0.2;
+}
+
+
+/* =========================== MEDIA QUERIES ============================  */

@@ -7,7 +7,7 @@ import HoverOptions from '../hover-options/hover-options'
 const Player = (player) => {
   return (
     <>
-      {/* <HoverOptions /> */}
+      <HoverOptions />
       <div className="player-name-column player-data-cell-container">
         <div className="player-data-cell">
           {player.name}

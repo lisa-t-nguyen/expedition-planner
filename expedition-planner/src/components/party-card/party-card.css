@@ -53,6 +53,8 @@
 
 .player-data-row {
     display: flex;
+
+    position: relative;
     
     width: 100%;
     height: calc(100% / 6);
