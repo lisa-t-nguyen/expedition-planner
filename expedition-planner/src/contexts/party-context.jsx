@@ -13,7 +13,7 @@ export const RolesContext = createContext(
             .add("Shadower")
         )
         .set("SE", new Set()
-            .add("Bowmaster")
+            .add("Bow Master")
             .add("Marksman")
             .add("Wind Archer")
         )
