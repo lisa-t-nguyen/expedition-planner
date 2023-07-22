@@ -14,8 +14,6 @@ const ExpeditionPlanner = () => {
   const addPlayer = (player) => {
     for (const party of parties) {
       if (party.partyMembers.length < 6) {
-        console.log(`Adding ${player.name} to party ${party.partyNumber} in slot ${party.partyMembers.length}...`);
-
         // Adds information about which party the player will be added to to the player object
         player.partyNumber = party.partyNumber;
         player.partyIndex = party.partyMembers.length;
@@ -24,20 +22,15 @@ const ExpeditionPlanner = () => {
         party.partyMembers.push(player);
         addedPlayers.set(player.name.toLowerCase(), player);
         setParties([...parties]);
-
-        console.log(`Added ${player.name.toLowerCase()} to map`)
-        console.log(addedPlayers);
-        console.log(parties);
         return;
       }
     }
 
     // Every party is full
-    console.log(`All parties are full!`);
+    console.log(`All parties are full!`); // TODO: Add error message to UI
   }
 
   const updatePlayer = (player) => {
-    console.log(`Updating ${player.name} in party...`);
     if (addedPlayers.has(player.name.toLowerCase())) {
       const playerToUpdate = addedPlayers.get(player.name.toLowerCase());
       playerToUpdate.name = player.name;
@@ -45,16 +38,10 @@ const ExpeditionPlanner = () => {
       playerToUpdate.level = player.level;
       playerToUpdate.dpm = player.singleTargetDPM;
       setParties([...parties]);
-
-      console.log(`Updated ${player.name.toLowerCase()} in map`)
-      console.log(addedPlayers);
-      console.log(parties);
     }
   }
 
   const removePlayer = (player) => {
-    console.log(`Attempting to remove ${player.name} from party...`);
-
     const playerToRemove = addedPlayers.get(player.name.toLowerCase());
     if (playerToRemove) {
       const party = parties[playerToRemove.partyNumber - 1];
@@ -62,12 +49,6 @@ const ExpeditionPlanner = () => {
       party.partyMembers.splice(partyIndex, 1);
       addedPlayers.delete(player.name.toLowerCase());
       setParties([...parties]);
-
-      console.log(`Removed ${player.name.toLowerCase()} from map`)
-      console.log(addedPlayers);
-      console.log(parties);
-    } else {
-      console.log(`${player.name.toLowerCase()} was not found in map!`)
     }
   }
 

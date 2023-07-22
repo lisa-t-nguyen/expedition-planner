@@ -11,7 +11,7 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
 
   const handleSearch = () => {
     if (searchInput.length < 4 || searchInput.length > 12) {
-      console.log(`"${searchInput}" is not a valid length`);
+      console.log(`"${searchInput}" is not a valid length`); // TODO: Add error message to UI
     } else {
       clearSearchInput();
       searchPlayer(searchInput);
@@ -19,14 +19,10 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
   }
 
   const searchPlayer = (playerName) => {
-    console.log(`Checking if ${playerName.toLowerCase()} is in the map...`)
-    console.log(addedPlayers);
     if (addedPlayers.has(playerName.toLowerCase())) {
-      console.log(`${playerName} has already been added!`)
+      console.log(`${playerName} has already been added!`) // TODO: Add error message to UI
       return;
     }
-
-    console.log(`Calling http://localhost:3001/playerData/${playerName}`);
 
     let player = { name: playerName };
     addPlayer(player);
@@ -37,18 +33,17 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
         return response.json();
       } else if (response.status === 404) {
         removePlayer(player);
-        throw new Error(`Player ${playerName} was not found!`);
+        throw new Error(`Player ${playerName} was not found!`); // TODO: Add error message to UI
       } else {
-        throw new Error(`Search for player ${playerName} was not successful!`);
+        throw new Error(`Search for player ${playerName} was not successful!`); // TODO: Add error message to UI
       }
     })
     .then((playerObject) => {
       player = playerObject;
-      console.log(player);
       updatePlayer(player);
     })
     .catch((error) => {
-      console.log(error.message);
+      console.log(error.message); // TODO: Add error message to UI
     })
   }
 
