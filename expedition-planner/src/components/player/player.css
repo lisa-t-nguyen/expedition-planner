@@ -1,0 +1,24 @@
+.player-data-cell-container {
+    display: flex;
+    align-items: center;
+}
+
+.player-data-cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    width: 100%;
+}
+
+/* =========================== MEDIA QUERIES ============================  */
+
+@media screen and ( max-width: 1200px ) {
+    .player-dpm {
+        display: none;
+    }
+}
+
+@media screen and ( max-width: 600px ) {
+    
+}
