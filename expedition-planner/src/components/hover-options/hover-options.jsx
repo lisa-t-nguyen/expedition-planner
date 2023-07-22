@@ -9,7 +9,8 @@ const HoverOptions = () => {
       <div className="hover-options-container"
            onMouseEnter={() => setIsHovering(true)}
            onMouseLeave={() => setIsHovering(false)}>
-        { isHovering && 
+        { 
+          isHovering && 
           <div className="hover-options">
             <button>Remove</button>
           </div> 
