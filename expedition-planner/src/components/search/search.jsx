@@ -1,13 +1,17 @@
-import React from 'react'
+import { React, useContext } from 'react'
 import { useState } from 'react';
 import './search.css'
 
-const Search = () => {
+import { AddedPlayersContext } from '../../contexts/party-context'
+
+const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
   const [searchInput, setSearchInput] = useState('');
+
+  const addedPlayers = useContext(AddedPlayersContext);
 
   const handleSearch = () => {
     if (searchInput.length < 4 || searchInput.length > 12) {
-      console.log(`"${searchInput}" is not a valid length`);
+      console.log(`"${searchInput}" is not a valid length`); // TODO: Add error message to UI
     } else {
       clearSearchInput();
       searchPlayer(searchInput);
@@ -15,26 +19,31 @@ const Search = () => {
   }
 
   const searchPlayer = (playerName) => {
-    console.log(`Calling http://localhost:3001/playerData/${playerName}`);
+    if (addedPlayers.has(playerName.toLowerCase())) {
+      console.log(`${playerName} has already been added!`) // TODO: Add error message to UI
+      return;
+    }
 
-    let player = {};
+    let player = { name: playerName };
+    addPlayer(player);
 
     fetch(`http://localhost:3001/playerData/${playerName}`)
     .then((response) => { 
       if (response.status === 200) {
         return response.json();
       } else if (response.status === 404) {
-        throw new Error(`Player ${playerName} was not found!`);
+        removePlayer(player);
+        throw new Error(`Player ${playerName} was not found!`); // TODO: Add error message to UI
       } else {
-        throw new Error(`Search for player ${playerName} was not successful!`);
+        throw new Error(`Search for player ${playerName} was not successful!`); // TODO: Add error message to UI
       }
     })
     .then((playerObject) => {
       player = playerObject;
-      console.log(player);
+      updatePlayer(player);
     })
     .catch((error) => {
-      console.log(error.message);
+      console.log(error.message); // TODO: Add error message to UI
     })
   }
 

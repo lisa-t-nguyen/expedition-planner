@@ -9,6 +9,13 @@
 
 /* =========================== MEDIA QUERIES ============================  */
 
+@media screen and ( max-width: 1024px ) {
+    .party-cards-container {
+        height: 90%;
+        gap: 5%;
+    }
+}
+
 @media screen and ( max-width: 600px ) {
     .party-cards-container {
         height: 140%;
