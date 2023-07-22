@@ -1,3 +1,15 @@
+.player-data-cell-container {
+    display: flex;
+    align-items: center;
+}
+
+.player-data-cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    width: 100%;
+}
 
 /* =========================== MEDIA QUERIES ============================  */
 

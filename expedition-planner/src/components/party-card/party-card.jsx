@@ -22,7 +22,9 @@ const PartyCard = ({party}) => {
     }
 
     return emptyPartySlots.map((emptySlot) => (
-      <Player key={emptySlot.emptySlotNumber} />
+      <div className="player-data-row">
+        <Player key={emptySlot.emptySlotNumber} />
+      </div>
     ));
   }
 
@@ -37,28 +39,28 @@ const PartyCard = ({party}) => {
            >
       </img>
       <div className="party-card">
-          <table className="party-table">
-            <thead>
-              <tr className="player-data-row">
-                <th>Name</th>
-                <th>Class</th>
-                <th>Level</th>
-                <th>Role</th>
-                <th class="player-data-dpm">DPM</th>
-              </tr>
-            </thead>
-            <tbody>
-              {party.partyMembers.map((player) => (
+        <div className="party-table-container">
+          <div className="player-header-row">
+            <div className="player-name-column">Name</div>
+            <div className="player-class-column">Class</div>
+            <div className="player-level-column">Level</div>
+            <div className="player-role-column">Role</div>
+            <div className="player-dpm-column">DPM</div>
+          </div>
+          <div className="player-data-container">
+            {party.partyMembers.map((player) => (
+              <div className="player-data-row">
                 <Player name={player.name} 
                         class={player.class} 
                         level={player.level} 
                         role={player.role} 
                         dpm={player.dpm} 
                         key={player.name} />
-              ))}
-              {generateEmptySlots(party)}
-            </tbody>
-          </table>
+              </div>
+            ))}
+            {generateEmptySlots(party)}
+          </div>
+        </div>
       </div>
     </div>
   )
