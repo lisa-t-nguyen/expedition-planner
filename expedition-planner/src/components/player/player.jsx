@@ -4,10 +4,10 @@ import './player.css'
 import Role from '../role/role'
 import HoverOptions from '../hover-options/hover-options'
 
-const Player = (player) => {
+const Player = ({ player }) => {
   return (
     <>
-      <HoverOptions />
+      { !player.isEmpty && <HoverOptions /> }
       <div className="player-name-column player-data-cell-container">
         <div className="player-data-cell">
           {player.name}

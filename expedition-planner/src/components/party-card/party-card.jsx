@@ -22,8 +22,9 @@ const PartyCard = ({party}) => {
     }
 
     return emptyPartySlots.map((emptySlot) => (
-      <div className="player-data-row">
-        <Player key={emptySlot.emptySlotNumber} />
+      <div className="player-data-row" key={`emptySlotRow_${((party.partyNumber - 1) * MAX_PARTY_SIZE) + (emptySlot.emptySlotNumber)}`}>
+        <Player player={emptySlot}
+                key={`emptySlot_${((party.partyNumber - 1) * MAX_PARTY_SIZE) + (emptySlot.emptySlotNumber)}`} />
       </div>
     ));
   }
@@ -50,11 +51,7 @@ const PartyCard = ({party}) => {
           <div className="player-data-container">
             {party.partyMembers.map((player) => (
               <div className="player-data-row">
-                <Player name={player.name} 
-                        class={player.class} 
-                        level={player.level} 
-                        role={player.role} 
-                        dpm={player.dpm} 
+                <Player player={player} 
                         key={player.name} />
               </div>
             ))}
