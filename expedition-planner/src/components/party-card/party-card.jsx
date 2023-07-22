@@ -50,7 +50,7 @@ const PartyCard = ({party}) => {
           </div>
           <div className="player-data-container">
             {party.partyMembers.map((player) => (
-              <div className="player-data-row">
+              <div key={`$Row_{player.name}`} className="player-data-row">
                 <Player player={player} 
                         key={player.name} />
               </div>
