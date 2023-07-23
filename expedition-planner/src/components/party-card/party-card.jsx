@@ -6,14 +6,16 @@ import Party2 from '../../assets/Party2.png';
 import Party3 from '../../assets/Party3.png';
 
 import Player from '../player/player';
-import { MaxPartySizeContext } from '../../contexts/party-context';
+import { partyManagementContext } from '../../contexts/party-context';
 
-const PartyCard = ({party}) => {
-  const maxPartySizeContext = useContext(MaxPartySizeContext);
+const PartyCard = ({partyNumber}) => {
+  const { getPartyByPartyNumber, getMaxPartySize } = useContext(partyManagementContext)
   
+  const party = getPartyByPartyNumber(partyNumber);
+
   const generateEmptySlots = (party) => {
-    const MAX_PARTY_SIZE = maxPartySizeContext;
-    let emptySlotsCount = MAX_PARTY_SIZE - party.partyMembers.length;
+    const maxPartySize = getMaxPartySize();
+    let emptySlotsCount = maxPartySize - party.partyMembers.length;
 
     const emptyPartySlots = [];
 
@@ -22,9 +24,9 @@ const PartyCard = ({party}) => {
     }
 
     return emptyPartySlots.map((emptySlot) => (
-      <div className="player-data-row" key={`emptySlotRow_${((party.partyNumber - 1) * MAX_PARTY_SIZE) + (emptySlot.emptySlotNumber)}`}>
+      <div className="player-data-row" key={`emptySlotRow_${((party.partyNumber - 1) * maxPartySize) + (emptySlot.emptySlotNumber)}`}>
         <Player player={emptySlot}
-                key={`emptySlot_${((party.partyNumber - 1) * MAX_PARTY_SIZE) + (emptySlot.emptySlotNumber)}`} />
+                key={`emptySlot_${((party.partyNumber - 1) * maxPartySize) + (emptySlot.emptySlotNumber)}`} />
       </div>
     ));
   }
@@ -50,9 +52,8 @@ const PartyCard = ({party}) => {
           </div>
           <div className="player-data-container">
             {party.partyMembers.map((player) => (
-              <div key={`$Row_{player.name}`} className="player-data-row">
-                <Player player={player} 
-                        key={player.name} />
+              <div key={`Row_${player.name}`} className="player-data-row">
+                <Player player={player} />
               </div>
             ))}
             {generateEmptySlots(party)}

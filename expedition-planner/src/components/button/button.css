@@ -1,0 +1,40 @@
+.button {
+    font-family: 'Poppins', sans-serif;
+
+    width: 80px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+
+    color: white;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button-purple {
+    background-color: #9B6694;
+}
+
+.button-purple:hover {
+    background-color: #9080C2;
+}
+
+.button-red {
+    background-color: #BE123C;
+}
+
+.button-red:hover {
+    background-color: #c07e8e;
+}
+
+.button-white {
+    background-color: white;
+    border: 1px solid #9B6694;
+    color: #9B6694;
+}
+
+.button-white:hover {
+    background-color: lightgray;
+}
