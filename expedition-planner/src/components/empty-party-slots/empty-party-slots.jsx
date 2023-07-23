@@ -1,4 +1,4 @@
-import { React, useContext, useState } from 'react'
+import { React, useContext } from 'react'
 import './empty-party-slots.css'
 
 import { partyManagementContext } from '../../contexts/party-context';
