@@ -9,10 +9,16 @@
     height: 100%;
 
     overflow: hidden;
+
+    z-index: 1;
 }
 
-.hover-actions-container:hover {
+.hover-actions-container-active-purple {
     background-color: rgba(155, 102, 148, 0.2); /* #9B6694 */
+}
+
+.hover-actions-container-active-green {
+    background-color: rgba(152, 223, 167, 0.2); /* #98DFA7 */
 }
 
 .hover-actions {

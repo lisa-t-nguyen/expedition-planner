@@ -1,0 +1,33 @@
+.empty-slots-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.player-empty-row {
+    display: flex;
+
+    position: relative;
+    
+    width: 100%;
+
+    border-bottom: 1px solid #9B6694;
+}
+
+.player-empty-row:last-child {
+    border-bottom: none;
+}
+
+/* =========================== MEDIA QUERIES ============================  */
+
+@media screen and ( max-width: 1200px ) {
+
+}
+
+@media screen and ( max-width: 600px ) {
+    
+}

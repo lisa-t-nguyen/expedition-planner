@@ -1,3 +1,19 @@
+.player-data-row {
+    display: flex;
+    flex-shrink: 0;
+
+    position: relative;
+    
+    width: 100%;
+    height: calc(100% / 6);
+
+    border-bottom: 1px solid #9B6694;
+}
+
+.player-data-row:last-child {
+    border-bottom: none;
+}
+
 .player-data-cell-container {
     display: flex;
     align-items: center;

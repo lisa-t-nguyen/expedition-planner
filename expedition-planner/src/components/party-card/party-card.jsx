@@ -6,30 +6,14 @@ import Party2 from '../../assets/Party2.png';
 import Party3 from '../../assets/Party3.png';
 
 import Player from '../player/player';
+import EmptyPartySlots from '../empty-party-slots/empty-party-slots';
 import { partyManagementContext } from '../../contexts/party-context';
 
 const PartyCard = ({partyNumber}) => {
-  const { getPartyByPartyNumber, getMaxPartySize } = useContext(partyManagementContext)
+  const { getPartyByPartyNumber, getMaxPartySize } = useContext(partyManagementContext);
+  const maxPartySize = getMaxPartySize();
   
   const party = getPartyByPartyNumber(partyNumber);
-
-  const generateEmptySlots = (party) => {
-    const maxPartySize = getMaxPartySize();
-    let emptySlotsCount = maxPartySize - party.partyMembers.length;
-
-    const emptyPartySlots = [];
-
-    for (let i = 0; i < emptySlotsCount; i++) {
-      emptyPartySlots.push({emptySlotNumber: i, isEmpty: true});
-    }
-
-    return emptyPartySlots.map((emptySlot) => (
-      <div className="player-data-row" key={`emptySlotRow_${((party.partyNumber - 1) * maxPartySize) + (emptySlot.emptySlotNumber)}`}>
-        <Player player={emptySlot}
-                key={`emptySlot_${((party.partyNumber - 1) * maxPartySize) + (emptySlot.emptySlotNumber)}`} />
-      </div>
-    ));
-  }
 
   return (
     <div className='party-container'>
@@ -52,11 +36,11 @@ const PartyCard = ({partyNumber}) => {
           </div>
           <div className="player-data-container">
             {party.partyMembers.map((player) => (
-              <div key={`Row_${player.name}`} className="player-data-row">
-                <Player player={player} />
-              </div>
+              <Player player={player} key={`Player_${player.name}`}/>
             ))}
-            {generateEmptySlots(party)}
+            { party.partyMembers.length < maxPartySize &&
+              <EmptyPartySlots party={party} />
+            }
           </div>
         </div>
       </div>

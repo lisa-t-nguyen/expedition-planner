@@ -1,0 +1,16 @@
+.player-empty-row-container {
+    position: relative;
+    
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================== MEDIA QUERIES ============================  */
+
+@media screen and ( max-width: 1200px ) {
+
+}
+
+@media screen and ( max-width: 600px ) {
+    
+}
