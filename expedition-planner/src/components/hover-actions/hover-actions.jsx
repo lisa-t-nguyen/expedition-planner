@@ -26,11 +26,11 @@ const HoverActions = ({player}) => {
           <div className="hover-actions">
             <Button text={removePlayerActionDetails.text} 
                     color={removePlayerActionDetails.buttonColor}
-                    details={removePlayerActionDetails.details}
+                    description={removePlayerActionDetails.description}
                     action={removeCurrentPlayer}/>
             <Button text={swapPlayerActionDetails.text} 
                     color={swapPlayerActionDetails.buttonColor}
-                    details={swapPlayerActionDetails.details}
+                    description={swapPlayerActionDetails.description}
                     action={swapPlayer}/>
           </div> 
         }
