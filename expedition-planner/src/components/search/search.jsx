@@ -1,13 +1,13 @@
-import { React, useContext } from 'react'
-import { useState } from 'react';
-import './search.css'
+import { React, useContext, useState } from 'react';
+import './search.css';
 
-import { AddedPlayersContext } from '../../contexts/party-context'
+import { partyManagementContext } from '../../contexts/party-context';
+import Button from '../button/button';
 
-const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
+const Search = () => {
+  const { addPlayer, updatePlayer, removePlayer, isPlayerAdded, getPlayerCount, getPartyCount, getMaxPartySize } = useContext(partyManagementContext);
+
   const [searchInput, setSearchInput] = useState('');
-
-  const addedPlayers = useContext(AddedPlayersContext);
 
   const handleSearch = () => {
     if (searchInput.length < 4 || searchInput.length > 12) {
@@ -19,8 +19,13 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
   }
 
   const searchPlayer = (playerName) => {
-    if (addedPlayers.has(playerName.toLowerCase())) {
+    if (isPlayerAdded(playerName)) {
       console.log(`${playerName} has already been added!`) // TODO: Add error message to UI
+      return;
+    }
+
+    if (getPlayerCount() === getPartyCount() * getMaxPartySize()) {
+      console.log(`All parties are full!`); // TODO: Add error message to UI
       return;
     }
 
@@ -64,11 +69,9 @@ const Search = ({ addPlayer, updatePlayer, removePlayer }) => {
              onChange={handleChange}
              onKeyDown={(e) => {if (e.key === 'Enter') { handleSearch() }}}>
       </input>
-      <button type='submit'
-              className='submit-button' 
-              onClick={handleSearch}>
-              Submit
-      </button>
+      <Button text="Submit"
+              color="purple"
+              action={handleSearch} />
     </div>
   )
 }

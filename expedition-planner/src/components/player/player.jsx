@@ -1,13 +1,13 @@
-import React from 'react'
+import { React } from 'react'
 import './player.css'
 
 import Role from '../role/role'
-import HoverOptions from '../hover-options/hover-options'
+import HoverActions from '../hover-actions/hover-actions'
 
 const Player = ({ player }) => {
   return (
     <>
-      { !player.isEmpty && <HoverOptions /> }
+      { !player.isEmpty && <HoverActions player={player} /> }
       <div className="player-name-column player-data-cell-container">
         <div className="player-data-cell">
           {player.name}
