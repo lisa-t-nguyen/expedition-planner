@@ -89,7 +89,23 @@
 /* =========================== MEDIA QUERIES ============================  */
 
 @media screen and ( max-width: 1200px ) {
-    .player-data-dpm {
+    .player-name-column {
+        width: 25%;
+    }
+    
+    .player-class-column {
+        width: 35%;
+    }
+    
+    .player-level-column {
+        width: 20%;
+    }
+    
+    .player-role-column {
+        width: 20%;
+    }
+
+    .player-dpm-column {
         display: none;
     }
 }
