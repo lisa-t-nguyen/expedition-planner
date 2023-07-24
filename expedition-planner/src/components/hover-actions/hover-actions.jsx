@@ -3,7 +3,7 @@ import './hover-actions.css'
 
 import Button from '../button/button';
 
-const HoverActions = ({isActive, activeColor="purple", variant, actionsWithDetails}) => {
+const HoverActions = ({isActive, activeColor="purple", isActionActive, variant, actionsWithDetails}) => {
   return (
     <>
       { 
@@ -28,7 +28,7 @@ const HoverActions = ({isActive, activeColor="purple", variant, actionsWithDetai
       }
       {
         variant==="overlayAction" &&
-        <div className={`hover-actions-container ${isActive ? `hover-actions-container-active-${activeColor}` : ''}`}
+        <div className={`hover-actions-container ${isActionActive ? 'hover-actions-container-button-overlay' : ''} ${isActive ? `hover-actions-container-active-${activeColor}` : ''}`}
              onClick={isActive ? actionsWithDetails.action : null}>
         </div>
       }

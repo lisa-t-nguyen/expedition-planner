@@ -13,6 +13,10 @@
     z-index: 1;
 }
 
+.hover-actions-container-button-overlay {
+    cursor: pointer;
+}
+
 .hover-actions-container-active-purple {
     background-color: rgba(155, 102, 148, 0.2); /* #9B6694 */
 }

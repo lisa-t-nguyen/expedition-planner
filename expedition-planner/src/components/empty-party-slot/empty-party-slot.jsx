@@ -29,6 +29,7 @@ const EmptyPartySlot = ({ emptySlot, party }) => {
          onMouseLeave={() => setEmptySlotActiveFlag(false)}>
       <HoverActions isActive={isHovered}
                     activeColor={!isAPlayerSelected() ? "purple" : "green"}
+                    isActionActive={isAPlayerSelected()}
                     variant="overlayAction"
                     actionsWithDetails={swapPlayerToPartyActionWithDetails}/>
       <Player player={emptySlot} />
